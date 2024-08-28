@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8000;
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname));
 
 let items = ["Buy Food", "Cook Food", "Eat Food"];
 
