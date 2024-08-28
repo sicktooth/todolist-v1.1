@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do list</title>
-    <link rel="stylesheet" href="../css/output.css">
-</head>
-<body class="bg-teal-300">
-    <h1 class="bg-purple-300 text-white"><%= kindOfDay %></h1>
-    <!-- <p></p> -->
-    <ul>
-        <% for (let start = 0; start<newListItems.length; start++){ %>
-            <li><%= newListItems[start] %></li>
-        <% } %>
-    </ul>
-    <form action="/" method="post">
-        <input type="text" name="newItem" placeholder="New Item">
-        <button type="submit" name="button">Add</button>
-    </form>
-</body>
+<html lang="en" class="bg-style">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-do list</title>
+        <link rel="stylesheet" href="../css/output.css">
+    </head>
+    <body>
+        <h1 class="bg-purple-300 p-2 text-white text-3xl" id="head"><%= kindOfDay %></h1>
+        <!-- <p></p> -->
+        <ul>
+            <% for (let start = 0; start<newListItems.length; start++){ %>
+                <li><%= newListItems[start] %></li>
+            <% } %>
+        </ul>
+        <form action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item">
+            <button type="submit" name="button">Add</button>
+        </form>
+        <script src="../js/script.js"></script>
+    </body>
 </html>
