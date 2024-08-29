@@ -7,22 +7,24 @@
         <link rel="stylesheet" href="../css/output.css">
     </head>
     <body>
-        <main class="mx-auto">
-            <h1 class="bg-purple-300 p-2 text-white text-3xl" id="head"><%= kindOfDay %></h1>
-            <ul>
-                <% for (let start = 0; start<newListItems.length; start++){ %>
-                    <li><input type="checkbox" class="mr-6 checkBox"> <%= newListItems[start] %></li>
-                <% } %>
-            </ul>
-            <form action="/" method="post">
-                <input type="text" name="newItem" placeholder="New Item">
-                <button type="submit" name="button">Add</button>
-            </form>
-            <script src="../js/script.js"></script>
+        <main class="mx-auto w-1/2">
+            <section>
+                <h1 class="bg-purple-300 p-2 text-white text-3xl" id="head"><%= kindOfDay %></h1>
+                <ul>
+                    <% for (let start = 0; start<newListItems.length; start++){ %>
+                        <li><input type="checkbox" class="mr-6 checkBox"> <%= newListItems[start] %></li>
+                    <% } %>
+                </ul>
+                <form action="/" method="post">
+                    <input type="text" name="newItem" placeholder="New Item">
+                    <button type="submit" name="button">Add</button>
+                </form>
+            </section>
+            
+            <footer>
+                <p class="p-5 font-extralight text-xs text-black">&copy; <a href="https://portfolio-nine-gules-60.vercel.app/" target="_blank" rel="noopener noreferrer">Samuel Ogboru. 2024</a></p>
+            </footer>
         </main>
-        <footer>
-            <p class="p-5 font-extralight text-xs text-black">&copy; Sammy Ogboru creations... <a href="https://portfolio-nine-gules-60.vercel.app/" target="_blank" rel="noopener noreferrer">See more.</a></p>
-        </footer>
-        
+        <script src="../js/script.js"></script>
     </body>
 </html>
