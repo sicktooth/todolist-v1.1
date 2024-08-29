@@ -1,8 +1,16 @@
-let head = document.querySelector('#head');
-console.log(head.outerHTML);
+const toggle = document.querySelectorAll('.checkBox');
+console.log(toggle);
 
-head.addEventListener('click', () => {
-    if (head) {
-        head.outerHTML = '<del class="bg-purple-300 p-2 text-white text-3xl" id="head">Wednesday, August 28</del>';
-    }
-})
+toggle.forEach(toggler);
+
+function toggler(element, index, array) {
+    array[index] = element.addEventListener('click',() => {
+        if (element.checked) {
+            element.parentElement.style.textDecoration = "line-through"
+        } else {
+            element.parentElement.style.textDecoration = "none"
+        }
+        console.log(element.checked);
+    })
+
+}
