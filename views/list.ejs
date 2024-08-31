@@ -7,20 +7,20 @@
         <link rel="stylesheet" href="../css/output.css">
     </head>
     <body>
-        <main class="mx-auto w-1/4">
-            <section class="pt-10">
+        <main class="mx-auto my-12 max-w-sm">
+            <section class="">
                 <header class="text-center mb-12">
                     <h1 class="bg-purple-300 p-2 text-white text-3xl font-bold" id="head"><%= kindOfDay %></h1>
                 </header>
-                <div class="bg-white shadow-2xl">
+                <div class="bg-white box">
                     <ul>
                     <% for (let start = 0; start<newListItems.length; start++){ %>
-                        <li class="border-b-2 border-gray-100 p-5 text-2xl"><input type="checkbox" class="mr-6 checkBox"> <%= newListItems[start] %></li>
+                        <li class="item"><input type="checkbox" class="checkBox m-5"> <%= newListItems[start] %></li>
                     <% } %>
                     </ul>
-                    <form action="/" method="post">
+                    <form action="/" method="post" class="form">
                         <input type="text" name="newItem" placeholder="New Item">
-                        <button type="submit" name="button">Add</button>
+                        <button type="submit" class="btn" name="button">Add</button>
                     </form>
                 </div>
             </section>
