@@ -6,6 +6,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 let items = ["Buy Food", "Cook Food", "Eat Food"];
+workItems = [];
 
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
@@ -28,19 +29,37 @@ app.get('/', (req, res) => {
         message = "keep working on " + day+"s";
     }
     res.render("list", {
-        kindOfDay: dayOfWeek,
+        listTitle: dayOfWeek,
         message: message,
         newListItems: items
     });
+    
+});
+
+app.get("/work", function(req, res) {
+    res.render("list", {
+        listTitle: "Work List",
+        newListItems: workItems
+    })
 });
 
 app.post("/", (req, res) =>{
     let item = req.body.newItem;
-    // console.log(item);
-    items.push(item);
-    // console.log(items);
-    res.redirect("/");
+    console.log(req.body);
+    if (req.body.list === "Work") {
+        workItems.push(item);
+        res.redirect("/work")
+    } else {
+        items.push(item);
+        res.redirect("/");
+    }
 })
+
+app.post("/work", (req, res) => {
+    let item = req.body.newItem;
+    workItems.push(item);
+    res.redirect("/work");
+});
 
 app.listen(port, function() {
     console.log("listening on port " + port);

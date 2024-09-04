@@ -10,7 +10,7 @@
         <main class="mx-auto my-12 max-w-sm">
             <section class="">
                 <header class="text-center mb-12">
-                    <h1 class="bg-purple-300 p-2 text-white text-3xl font-bold" id="head"><%= kindOfDay %></h1>
+                    <h1 class="bg-purple-300 p-2 text-white text-3xl font-bold" id="head"><%= listTitle %></h1>
                 </header>
                 <div class="bg-white box">
                     <ul>
@@ -20,8 +20,8 @@
                     </ul>
                     <form action="/" method="post" class="form">
                         <input type="text" name="newItem" placeholder="New Item">
-                        <button type="submit" class="btn" name="button">
-                            <!-- <svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> --> +
+                        <button type="submit" class="btn" name="list" value=<%= listTitle %>>
+                            +
                         </button>
                     </form>
                 </div>
