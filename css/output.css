@@ -576,6 +576,10 @@ video {
   max-width: 24rem;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .bg-purple-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(216 180 254 / var(--tw-bg-opacity));
