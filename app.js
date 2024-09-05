@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const date = require(__dirname + '/date.js');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
@@ -11,26 +12,9 @@ workItems = [];
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     
-    let todays = new Date();
-    let options = { 
-        weekday: 'long'
-    };
-    let option = {
-        weekday: 'long',
-        day: 'numeric', 
-        month: 'long'
-    }
-    let day = todays.toLocaleDateString('en-US', options);
-    let dayOfWeek = todays.toLocaleDateString('en-US', option);
-
-    if (todays.getDay() == 6 || todays.getDay() == 0) {
-        message = "stop working on " + day+"s, " + "instead do the following:";
-    } else {
-        message = "keep working on " + day+"s";
-    }
+    let dayOfWeek = date();
     res.render("list", {
         listTitle: dayOfWeek,
-        message: message,
         newListItems: items
     });
     
