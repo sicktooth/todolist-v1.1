@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="bg-style">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>To-do list</title>
-        <link rel="stylesheet" href="../css/output.css">
-    </head>
-    <body>
+<%- include('header'); -%>
         <main class="mx-auto my-12 max-w-sm">
             <section class="">
                 <header class="text-center mb-12">
@@ -15,7 +7,7 @@
                 <div class="bg-white box">
                     <ul>
                     <% for (let start = 0; start<newListItems.length; start++){ %>
-                        <li class="item"><input type="checkbox" class="checkBox m-5"> <%= newListItems[start] %></li>
+                        <li class="item"><input type="checkbox" class="checkBox m-5 cursor-pointer"> <%= newListItems[start] %></li>
                     <% } %>
                     </ul>
                     <form action="/" method="post" class="form">
@@ -27,10 +19,4 @@
                 </div>
             </section>
             
-            <footer class="text-center">
-                <p class="p-5 font-extralight text-xs text-black">&copy; <a href="https://portfolio-nine-gules-60.vercel.app/" target="_blank" rel="noopener noreferrer">Samuel Ogboru. 2024</a></p>
-            </footer>
-        </main>
-        <script src="../js/script.js"></script>
-    </body>
-</html>
+<%- include('footer'); -%>
