@@ -61,6 +61,10 @@ app.post("/work", (req, res) => {
     res.redirect("/work");
 });
 
+app.get("/about", (req, res) => {
+    res.render("about");
+});
+
 app.listen(port, function() {
     console.log("listening on port " + port);
 });
