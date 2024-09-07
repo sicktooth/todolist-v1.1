@@ -1,13 +1,17 @@
-module.exports = getDate;
-
-
-function getDate() {
-    let todays = new Date();
-    let option = {
+exports.getDate = function() {
+    const todays = new Date();
+    const option = {
         weekday: 'long',
         day: 'numeric', 
         month: 'long'
     }
-    let dayOfWeek = todays.toLocaleDateString('en-US', option);
-    return dayOfWeek;
+    return todays.toLocaleDateString('en-US', option);
+}
+
+exports.getDay = function() {
+    const todays = new Date();
+    const option = {
+        weekday: 'long'
+    }
+    return todays.toLocaleDateString('en-US', option);
 }
